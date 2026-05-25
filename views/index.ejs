@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/main.css">
+    <title>Daily Quote</title>
+</head>
+
+<body>
+    <div class="card-container donde-todo-brilla" onclick="flipCard(this)">
+        <div class="card-inner">
+            <% if (locals.dailyQuote) {%>
+                <div class="card-front">
+                    <h3>Frase del Día</h3>
+                    <p>Haz click para descubrir la reflexión de hoy...</p>
+                    <span class="click-hint">✨</span>
+                </div>
+                <div class="card-back">
+                    <p class="quote">
+                        <%= dailyQuote.value %>
+                    </p>
+                    <p class="book">
+                        <%= dailyQuote.book %>
+                    </p>
+                </div>
+                <%} else { %>
+                    <p>Error while getting the quote</p>
+                    <% } %>
+        </div>
+    </div>
+    <script>
+        function flipCard(cardContainer) {
+            // Alterna la clase 'flipped' en el contenedor donde se hizo click
+            cardContainer.classList.toggle('flipped');
+        }
+    </script>
+</body>
+
+</html>
