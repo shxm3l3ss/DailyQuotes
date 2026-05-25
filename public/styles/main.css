@@ -7,6 +7,12 @@ html, body{
 
 }
 
+body{
+
+    background-color: black;
+
+}
+
 .card-container {
 
     width: 100%;
