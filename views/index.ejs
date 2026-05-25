@@ -9,13 +9,14 @@
 </head>
 
 <body>
-    <div class="card-container donde-todo-brilla" onclick="flipCard(this)">
+    <div class="card-container" onclick="flipCard(this)">
+        <p style="font-size: 40px; margin: 5px; color: white; font-weight: bold;">Frase del Día</p>
+
         <div class="card-inner">
             <% if (locals.dailyQuote) {%>
                 <div class="card-front">
-                    <h3>Frase del Día</h3>
-                    <p>Haz click para descubrir la reflexión de hoy...</p>
-                    <span class="click-hint">✨</span>
+                    <p style="font-size: 28px; color: black;">Haz click para dar vuelta <span
+                            class="click-hint">✨</span></p>
                 </div>
                 <div class="card-back">
                     <p class="quote">
@@ -29,12 +30,47 @@
                     <p>Error while getting the quote</p>
                     <% } %>
         </div>
-    </div>
+    </div> 
     <script>
+
+        var background = "";
+  
+        const currentBook = '<%- dailyQuote.book %>';
+
+        if (currentBook === "Donde todo brilla"){
+        
+            background = "donde-todo-brilla";
+
+        }
+        else if(currentBook === "La teoría de los archipiélagos"){
+
+            background = "la-teoria-de-los-archipielagos";
+
+        }
+        else if (currentBook === "El día que dejó de nevar en Alaska"){
+
+            background = "El-día-que-dejo-de-nevar-en-Alaska";
+
+        }
+        else if (currentBook === "El chico que dibujaba constelaciones"){
+
+            background = "El-chico-que-dibujaba-constelaciones";
+
+        }
+        else if(currentBook === "Nosotros en la luna"){
+
+            background = "Nosotros-en-la-luna";
+
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector(".card-container").classList.add(background);
+        });
+
         function flipCard(cardContainer) {
-            // Alterna la clase 'flipped' en el contenedor donde se hizo click
             cardContainer.classList.toggle('flipped');
         }
+
     </script>
 </body>
 
