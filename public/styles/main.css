@@ -10,6 +10,10 @@ html, body{
 body{
 
     background-color: black;
+    font-family: "Finlandica Headline", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
 
 }
 

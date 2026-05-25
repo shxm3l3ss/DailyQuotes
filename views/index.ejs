@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Finlandica+Headline:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles/main.css">
     <title>Daily Quote</title>
 </head>
@@ -15,12 +18,12 @@
         <div class="card-inner">
             <% if (locals.dailyQuote) {%>
                 <div class="card-front">
-                    <p style="font-size: 28px; color: black;">Haz click para dar vuelta <span
+                    <p style="font-size: 34px; color: black;">Haz click para dar vuelta <span
                             class="click-hint">✨</span></p>
                 </div>
                 <div class="card-back">
                     <p class="quote">
-                        <%= dailyQuote.value %>
+                        "<%= dailyQuote.value %>"
                     </p>
                     <p class="book">
                         <%= dailyQuote.book %>
